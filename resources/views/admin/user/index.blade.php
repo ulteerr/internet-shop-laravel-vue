@@ -4,9 +4,29 @@
         <div class="container-fluid">
             <div class="row">
                 @include('admin.includes.table', [
-                    'names' => ['ID', 'Наименования', 'Редактировать'],
+                    'names' => [
+                        'ID',
+                        'Имя',
+                        'Фамилия',
+                        'Отчество',
+                        'Возраст',
+                        'Почта',
+                        'Адрес',
+                        'Пол',
+                        'Редактировать',
+                    ],
                     'items' => $users,
-                    'items_key' => ['id', 'title', 'edit' => 'Перейти'],
+                    'items_key' => [
+                        'id',
+                        'name',
+                        'surname',
+                        'patronymic',
+                        'age',
+                        'email',
+                        'address',
+                        'genderTitle',
+                        'edit' => 'Перейти',
+                    ],
                     'buttons' => [
                         [
                             'route' => route('admin.user.create'),

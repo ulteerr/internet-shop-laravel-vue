@@ -10,7 +10,7 @@ class EditController extends Controller
 {
     public function __invoke(User $user)
     {
-        $data['title'] = 'Редактировать' . " " . $user->title;
+        $data['title'] = 'Редактировать' . " " . $user->name;
         $data['breadcrumbs'] = [
             [
                 'title' => 'Главная',

@@ -17,9 +17,16 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    const GENDER_MALE = 1;
+    const GENDER_FEMALE = 2;
     protected $fillable = [
         'name',
         'email',
+        'surname',
+        'patronymic',
+        'age',
+        'address',
+        'gender',
         'password',
     ];
 
@@ -42,4 +49,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    static function getGenders()
+    {
+        return [
+            self::GENDER_MALE => 'Мужской',
+            self::GENDER_FEMALE => 'Женский',
+        ];
+    }
+    public function getGenderTitleAttribute(){
+        return self::getGenders()[$this->gender];
+    }
 }

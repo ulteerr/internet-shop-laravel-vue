@@ -10,7 +10,7 @@ class ShowController extends Controller
 {
     public function __invoke(User $user)
     {
-        $data['title'] = 'Пользователь'. " " . $user->title;
+        $data['title'] = 'Пользователь'. " " . $user->name;
         $data['breadcrumbs'] = [
             [
                 'title' => 'Главная',

@@ -13,7 +13,7 @@ class UpdateController extends Controller
     {
         $update = $request->validated();
         $user->update($update);
-        $data['title'] = 'Тег'. " " . $user->title;
+        $data['title'] = 'Тег'. " " . $user->name;
         $data['breadcrumbs'] = [
             [
                 'title' => 'Главная',

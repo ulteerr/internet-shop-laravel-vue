@@ -12,8 +12,10 @@ class StoreController extends Controller
     public function __invoke(StoreRequest $request)
     {
         $store = $request->validated();
-        User::firstOrCreate($store);
-        
+        User::firstOrCreate([
+            'email' => $store['email']
+        ], $store);
+
         return redirect()->route('admin.user.index');
     }
 }
