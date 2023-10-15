@@ -25,6 +25,11 @@ $routes = [
         'namespace' => '\App\Http\Controllers\Admin\User\\',
         'name' => 'user',
     ],
+    [
+        'prefix' => 'products',
+        'namespace' => '\App\Http\Controllers\Admin\Product\\',
+        'name' => 'product',
+    ],
 ];
 
 Route::get('/', MainController::class)->name("{$namePrefix}.index");
