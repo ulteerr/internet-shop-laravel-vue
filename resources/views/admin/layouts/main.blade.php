@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/fontawesome-free/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('adminlte/dist/css/adminlte.min.css') }}">
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
+    @vite('resources/scss/admin.scss')
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -23,13 +24,15 @@
 
         <div class="content-wrapper">
             @include('admin.includes.main.header')
-            @yield('content')
-        </div>
-        @include('admin.includes.main.footer')
-        <aside class="control-sidebar control-sidebar-dark">
-        </aside>
-    </div>
-    @include('admin.includes.main.script')
+            <div class="content-wrapper">
+
+                @yield('content')
+
+                @include('admin.includes.main.footer')
+                <aside class="control-sidebar control-sidebar-dark">
+                </aside>
+            </div>
+            @include('admin.includes.main.script')
 </body>
 
 </html>
