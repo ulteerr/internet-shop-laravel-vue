@@ -11,97 +11,54 @@
                             'type' => 'text',
                             'placeholder' => 'Наименование',
                             'name' => 'title',
+                            'value' => old('title'),
                         ],
                         [
                             'type' => 'textarea',
                             'placeholder' => 'Описание',
-                            'name' => 'title',
+                            'name' => 'description',
+                            'value' => old('description'),
                         ],
                         [
                             'type' => 'textarea',
                             'placeholder' => 'Контент',
                             'name' => 'content',
+                            'value' => old('content'),
                         ],
                         [
                             'type' => 'text',
                             'placeholder' => 'Цена',
                             'name' => 'price',
+                            'value' => old('price'),
                         ],
                         [
                             'type' => 'text',
                             'placeholder' => 'Количество на складе',
                             'name' => 'count',
+                            'value' => old('count'),
                         ],
                         [
                             'type' => 'file',
-                            // 'placeholder' => 'Количество на складе',
                             'name' => 'preview_image',
+                            'value' => old('preview_image'),
                         ],
                         [
                             'type' => 'select_multiple',
                             'placeholder' => 'Выберите тег',
                             'name' => 'tags',
-                            'elements' => [
-                                [
-                                    'disabled' => true,
-                                    'selected' => old('tags') ? '' : 'selected',
-                                    'text' => 'Пол',
-                                ],
-                                [
-                                    'selected' => old('tags') === '1' ? 'selected' : '',
-                                    'text' => 'Мужской',
-                                    'value' => '1',
-                                ],
-                                [
-                                    'selected' => old('tags') === '2' ? 'selected' : '',
-                                    'text' => 'Женский',
-                                    'value' => '2',
-                                ],
-                            ],
+                            'elements' => $tags,
                         ],
                         [
                             'type' => 'select_multiple',
                             'placeholder' => 'Выберите цвет',
                             'name' => 'colors',
-                            'elements' => [
-                                [
-                                    'disabled' => true,
-                                    'selected' => old('colors') ? '' : 'selected',
-                                    'text' => 'Пол',
-                                ],
-                                [
-                                    'selected' => old('colors') === '1' ? 'selected' : '',
-                                    'text' => 'Мужской',
-                                    'value' => '1',
-                                ],
-                                [
-                                    'selected' => old('colors') === '2' ? 'selected' : '',
-                                    'text' => 'Женский',
-                                    'value' => '2',
-                                ],
-                            ],
+                            'elements' => $colors,
                         ],
                         [
                             'type' => 'select',
                             'placeholder' => 'Пол',
                             'name' => 'category_id',
-                            'elements' => [
-                                [
-                                    'disabled' => true,
-                                    'selected' => old('category_id') ? '' : 'selected',
-                                    'text' => 'Пол',
-                                ],
-                                [
-                                    'selected' => old('category_id') === '1' ? 'selected' : '',
-                                    'text' => 'Мужской',
-                                    'value' => '1',
-                                ],
-                                [
-                                    'selected' => old('category_id') === '2' ? 'selected' : '',
-                                    'text' => 'Женский',
-                                    'value' => '2',
-                                ],
-                            ],
+                            'elements' => $categories,
                         ],
                         [
                             'type' => 'submit',

@@ -1,4 +1,4 @@
-<form action="{{ $action }}" method="post">
+<form action="{{ $action }}" method="post" enctype="multipart/form-data">
     @csrf
     @method($method)
     @foreach ($items as $item)
@@ -15,8 +15,8 @@
                 </select>
             @elseif($item['type'] === 'textarea')
                 <textarea class="form-control" @isset($item['placeholder'])placeholder="{{ $item['placeholder'] }}"@endisset
-                    @isset($item['value'])value="{{ $item['value'] }}"@endisset
                     @isset($item['name'])name="{{ $item['name'] }}"@endisset cols="30" rows="10">
+                    @isset($item['value']){{ $item['value'] }}@endisset
         </textarea>
             @elseif($item['type'] === 'select_multiple')
                 <select class="select_multiple" multiple="multiple" style="width: 100%;"

@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <div class="row">
                 @include('admin.includes.table', [
-                    'names' => ['ID', 'Наименования', 'Редактировать'],
+                    'names' => ['ID', 'Наименования', 'Посмотреть'],
                     'items' => $categories,
                     'items_key' => ['id', 'title', 'edit' => 'Перейти'],
                     'buttons' => [

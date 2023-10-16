@@ -9,4 +9,9 @@ class ProductTag extends Model
 {
     protected $table = 'product_tag';
     protected $quarded = 'false';
+
+    protected $fillable = [
+        'product_id',
+        'tag_id',
+    ];
 }
