@@ -1,0 +1,10 @@
+.select {
+	&2 {
+		&-container &-selection--single {
+			height: fit-content;
+		}
+		&-container--default &-selection--single &-selection__arrow {
+			top: 9px;
+		}
+	}
+}

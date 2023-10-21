@@ -11,3 +11,4 @@
      $('.select_multiple').select2()
      $('.select').select2()
  </script>
+  @vite('resources/js/admin.js')

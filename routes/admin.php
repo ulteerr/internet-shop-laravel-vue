@@ -44,5 +44,6 @@ foreach ($routes as $route) {
         Route::get('/{' . $route['name'] . '}', $namespaceEscaped . 'ShowController')->name("{$namePrefix}.{$route['name']}.show");
         Route::patch('/{' . $route['name'] . '}', $namespaceEscaped . 'UpdateController')->name("{$namePrefix}.{$route['name']}.update");
         Route::delete('/{' . $route['name'] . '}', $namespaceEscaped . 'DeleteController')->name("{$namePrefix}.{$route['name']}.delete");
+        Route::delete('/{' . $route['name'] . '}/delete-image', [$namespaceEscaped . 'DeleteController', 'deleteImage']);
     });
 }

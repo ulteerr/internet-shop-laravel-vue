@@ -12,6 +12,7 @@ class UpdateController extends Controller
     public function __invoke(UpdateRequest $request, Product $product)
     {
         $update = $request->validated();
+        dd($update);
         $product->update($update);
         $data['title'] = 'Продукт' . " " . $product->title;
         $data['breadcrumbs'] = [
